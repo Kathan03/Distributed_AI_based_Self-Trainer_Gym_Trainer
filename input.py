@@ -5,6 +5,7 @@ from mediapipe.tasks import python
 from mediapipe.framework.formats import landmark_pb2
 import numpy as np
 from keras.preprocessing.sequence import pad_sequences
+import os
 
 import model
 from model import ExerciseModel
@@ -17,7 +18,9 @@ VisionRunningMode = mp.tasks.vision.RunningMode
 
 model_path = './pose_landmarker_full.task'
 
-our_model = ExerciseModel('model.json', "model_weights.h5")
+#print(os.path.isfile("C:/Users/HP/Downloads/Sem-2/COMP512 AOS/Project/my_model.keras"))
+
+our_model = ExerciseModel("C:/Users/HP/Downloads/Sem-2/COMP512 AOS/Project/my_model.keras")
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 mp_pose = mp.solutions.pose
